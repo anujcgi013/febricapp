@@ -1,0 +1,81 @@
+.form-signin {
+    width: 100%;
+    align-content: center;
+    max-width: 500px;
+    padding: 15px;
+    margin: auto;
+  }
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  .form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .form-signin h2{
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: center;
+  }
+
+  .bt-login{
+      float:right;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+h3{
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+}
+
+h4{
+  color: #000;
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.form-signin .link1{
+    color: rgb(233, 185, 185);
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form-signin .link2{
+    color:grey;
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form-footer
+{
+    text-align: center;
+}
