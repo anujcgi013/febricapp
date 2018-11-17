@@ -15,7 +15,7 @@ export class ProductsService {
 
   postproducts(obj):Observable<object>{
     return this.http.post(
-      "http://febricclubapp.azurewebsites.net/API/product/productDetails",
+      "http://febricclubapi.azurewebsites.net/API/product/productDetails",
     obj,
     this.httpOptions);
   }
