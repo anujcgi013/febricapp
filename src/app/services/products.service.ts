@@ -16,16 +16,16 @@ export class ProductsService {
 
   postproducts(obj):Observable<object>{
     return this.http.post(
-      "http://localhost:60244/api/product/productDetail",
+      "http://febricclubapi.azurewebsites.net/api/product/productDetail",
     obj,
     this.httpOptions);
   }
 
   getProducts():Observable<Object>{
-    return this.http.get("http://localhost:60244/API/product");
+    return this.http.get("http://febricclubapi.azurewebsites.net/api/product");
  }
 
  getSerialNumber():Observable<object>{
-   return this.http.get<object>("http://localhost:60244/API/TopSerial");
+   return this.http.get<object>("http://febricclubapi.azurewebsites.net/api/TopSerial");
 }
 }
