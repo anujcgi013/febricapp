@@ -1,12 +1,15 @@
-    <form [formGroup]="productForm" (submit)="saveProduct()">
+<div class="split left">
+       
+    <form [formGroup]="productForm" (submit)="saveProduct()" >
            <table>
                <tr>
                <th>Bundle Number</th>
-               <td><input type="text" class="form-control" formControlName="bundleNumber" [(ngModel)]="SerialId"></td>
+               <td><input type="text" class="form-control" formControlName="bundleNumber" [(ngModel)]="bundleNumber" > </td>
                </tr>
                 <tr>
                <th>Length</th>
                <td><input type="text" class="form-control" formControlName="length" placeholder="Meter"></td>
+               
                </tr>
                <tr>
                <th>Weight</th>
@@ -20,13 +23,22 @@
                    <td><textarea class="form-control" rows=6 cols=50 formControlName="comments">
                        </textarea></td>
                </tr>
+               <br/>
                <tr><td colspan="3" align="center">
-                      <button type="submit"  class="btn btn-primary" >
+                      <button type="submit" class="btn btn-primary" >
                                  Generate Barcode</button>
                   </td></tr>
            </table>
-           <table style="display: inline-block; margin-left:50px ">
-                <ngx-barcode [bc-value]="SerialId" [bc-display-value]="true" >
-                </ngx-barcode>
-                </table>
       </form>
+    </div>
+    <ng-container *ngIf="show">
+<div id="barcode" class="split right">
+        <div class="centered">
+                <div id="print-section">
+      <ngx-barcode [bc-value]="barcodeNumber" [bc-display-value]="true" ></ngx-barcode>
+                </div>
+                <button (click)="print()" class="btn btn-primary" style="float: right">print</button>
+        </div>
+</div>
+</ng-container>
+      
