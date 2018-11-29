@@ -33,9 +33,9 @@ export class ProductComponent implements OnInit {
   }
   
   ngOnInit() {
-    // this.pruductService.getSerialNumber().subscribe(
-    //   (x:any) => {this.currentSerialNumber+=x;},
-    //   (y)=>{alert("Error in Fetching Serial Number")})
+    this.pruductService.getSerialNumber().subscribe(
+      (x:any) => {this.currentSerialNumber+=x;},
+      (y)=>{alert("Error in Fetching Serial Number")})
     }
 
 barcodeControl:any;
