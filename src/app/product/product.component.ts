@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
   bundleNumber:string;
   date=new Date();
   ProductDetails:product;
-  show:boolean=true;
+  show:boolean=false;
   currentSerialNumber:number=1;
   barcodeNumber:string;
 
@@ -34,7 +34,10 @@ export class ProductComponent implements OnInit {
   
   ngOnInit() {
     this.pruductService.getSerialNumber().subscribe(
-      (x:any) => {this.currentSerialNumber+=x;},
+      (x:any) => {
+        this.currentSerialNumber+=x
+        this.show=true;
+      },
       (y)=>{alert("Error in Fetching Serial Number")})
     }
 
