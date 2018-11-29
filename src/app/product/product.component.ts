@@ -23,13 +23,13 @@ export class ProductComponent implements OnInit {
   constructor(private formBuilder:FormBuilder, private pruductService:ProductsService,
     private datepipe:DatePipe) { 
     
-    // // this.productForm=this.formBuilder.group({
-    // //  // bundleNumber:['', [Validators.required,isSymbols]],
-    // //   length:'',
-    // //   weight:'',
-    // //   comments:'',
-    // //   createdDate:''
-    // })
+    this.productForm=this.formBuilder.group({
+      bundleNumber:['', [Validators.required,isSymbols]],
+      length:'',
+      weight:'',
+      comments:'',
+      createdDate:''
+    })
   }
   
   ngOnInit() {
