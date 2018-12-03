@@ -19,7 +19,6 @@ export class ProductComponent implements OnInit {
   currentSerialNumber:number=1;
   barcodeNumber:string;
 
-
   constructor(private formBuilder:FormBuilder, private pruductService:ProductsService,
     private datepipe:DatePipe) { 
     
@@ -52,7 +51,6 @@ barcodeControl:any;
     }
     this.pruductService.postproducts(productdata).subscribe(
       data=>{
-        alert('Your detail has been saved')
         this.show=true
         this.barcodeNumber = this.currentSerialNumber + ' ' + this.bundleNumber
       },
