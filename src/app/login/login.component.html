@@ -7,25 +7,28 @@
                   <form id="login-form" method="post" class="form-signin" role="form">
                           <div class="form-group row">
                                   <label for="inputPassword" class="col-sm-3 col-form-label">User ID</label>
+                                  <!-- <i class="material-icons prefix">account_circle </i> -->
                                   <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="userID" placeholder="Email id">
+                                      <input type="text" class="form-control" id="userID" placeholder="Email id" [(ngModel)]="user" [ngModelOptions]="{standalone: true}">
                                   </div>
                               </div>
                       <div class="form-group row">
                           <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
                           <div class="col-sm-9">
-                              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                              <input type="password" class="form-control" id="inputPassword"  placeholder="Password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
                           </div>
                       </div>
-                      <button href="product" class="btn btn-primary bt-login" type="submit" (click)="navigateDetails()">Sign In</button> 
+                      <button href="product"  class="btn btn-primary bt-login" type="submit" (click)="login()">Sign In</button> 
                   </form>
-                  <div class="form-footer">
+
+                  <!-- [disabled]="!login-form.valid" -->
+                  <!-- <div class="form-footer">
                       <div class="row">
                           <div class="col-xs-7 col-sm-7 col-md-7">
                               <a class="link2">Forgot Password</a>
                           </div>
                       </div>
-                  </div>
+                  </div> -->
               </div>
           </div>
       </form>

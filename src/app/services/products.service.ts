@@ -13,7 +13,7 @@ export class ProductsService {
       })
      }
   }
-//https://febricclubapi.azurewebsites.net/api/product/productDetail
+
   postproducts(obj):Observable<object>{
     return this.http.post(
       "https://febricclubapi.azurewebsites.net/api/product/productDetail",

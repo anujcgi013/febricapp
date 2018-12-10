@@ -19,6 +19,7 @@ import {SharedComponent} from './shared/shared.component';
 import { AppComponent } from './app.component';
 
 import { ProductsService } from './services/products.service';
+import {AuthenticationService} from './services/authentication.service'
 import { ProductlistComponent } from './product/productlist/productlist.component';
 
 @NgModule({
@@ -35,10 +36,10 @@ import { ProductlistComponent } from './product/productlist/productlist.componen
     AppRouteModule,
     LayoutModule,
     LoginModule,
-    NgxBarcodeModule
+    NgxBarcodeModule    
   //  AgGridModule.withComponents([AppComponent])
   ],
-  providers: [ProductsService, DatePipe],
+  providers: [ProductsService, DatePipe, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
