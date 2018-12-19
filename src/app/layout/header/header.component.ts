@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,13 @@ export class HeaderComponent implements OnInit {
 
   constructor() { }
 
+  @Input() flag:string=localStorage.getItem("Logged");
   ngOnInit() {
+  }
+
+  logout(){
+    localStorage.removeItem("Logged");
+    console.log("flag removed");
   }
 
 }
