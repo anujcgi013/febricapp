@@ -19,9 +19,11 @@ export class ProductComponent implements OnInit {
   currentSerialNumber:number=1;
   barcodeNumber:string;
 
-  constructor(private formBuilder:FormBuilder, private pruductService:ProductsService,
-    private datepipe:DatePipe) { 
-    
+  constructor(
+    private formBuilder:FormBuilder, 
+    private pruductService:ProductsService,
+    private datepipe:DatePipe) 
+    { 
     this.productForm=this.formBuilder.group({
       bundleNumber:['', [Validators.required,isSymbols]],
       length:'',

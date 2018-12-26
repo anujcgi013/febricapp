@@ -3,51 +3,32 @@
       <form class="form-signin">
           <h2>Fabric Management System</h2>
           <div class="card">
+              <alert></alert>
               <div class="card-body">
-                  <form id="login-form" method="post" class="form-signin" role="form">
+                  <form [formGroup]="loginForm" id="login-form" (ngSubmit)="onSubmit()">
                           <div class="form-group row">
-                                  <label for="inputPassword" class="col-sm-3 col-form-label">User ID</label>
-                                  <!-- <i class="material-icons prefix">account_circle </i> -->
+                                  <label for="username" class="col-sm-3 col-form-label">User ID</label>
                                   <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="userID" placeholder="Email id" [(ngModel)]="user" [ngModelOptions]="{standalone: true}">
+                                      <input type="text" formControlName="username" class="form-control" placeholder="Email id" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
                                   </div>
+                                  <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                    <div *ngIf="f.username.errors.required">Username is required</div>
+                                </div>
                               </div>
                       <div class="form-group row">
-                          <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                          <label for="password" class="col-sm-3 col-form-label">Password</label>
                           <div class="col-sm-9">
-                              <input type="password" class="form-control" id="inputPassword"  placeholder="Password" [(ngModel)]="pass" [ngModelOptions]="{standalone: true}">
+                              <input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                           </div>
+                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">Password is required</div>
+                        </div>
                       </div>
-                      <button href="product"  class="btn btn-primary bt-login" type="submit" (click)="login()">Sign In</button> 
+                      <button [disabled]="loading" class="btn btn-primary bt-login">Login</button>
+                      <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
                   </form>
-
-                  <!-- [disabled]="!login-form.valid" -->
-                  <!-- <div class="form-footer">
-                      <div class="row">
-                          <div class="col-xs-7 col-sm-7 col-md-7">
-                              <a class="link2">Forgot Password</a>
-                          </div>
-                      </div>
-                  </div> -->
               </div>
           </div>
       </form>
   </div>
 </div>
-
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel">Modal title</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-          </button>
-          </div>
-          <div class="modal-body">
-          Update required content 
-          </div>
-      </div>
-      </div>
-  </div> -->
-

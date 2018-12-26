@@ -20,7 +20,9 @@ import { AppComponent } from './app.component';
 
 import { ProductsService } from './services/products.service';
 import {AuthenticationService} from './services/authentication.service'
+import {AlertService} from './services/alert.service'
 import { ProductlistComponent } from './product/productlist/productlist.component';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,7 @@ import { ProductlistComponent } from './product/productlist/productlist.componen
     NgxBarcodeModule    
   //  AgGridModule.withComponents([AppComponent])
   ],
-  providers: [ProductsService, DatePipe, AuthenticationService],
+  providers: [ProductsService, DatePipe, AuthenticationService, AlertService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

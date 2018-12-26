@@ -17,7 +17,7 @@ export class AuthenticationService{
               password:password
       }}).pipe(map((x:boolean)=> { if(x)
         {
-            localStorage.setItem('Logged', "true");
+            localStorage.setItem('Logged', username);
     }
     return x;
     }));
